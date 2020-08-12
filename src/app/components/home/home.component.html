@@ -129,7 +129,35 @@
   
     <div class="vericle-space"></div>
 
+    <h2 class="heading">All Countries</h2>
+
+    <div class="vericle-space"></div>
     
+    <div class="table-container" style="overflow-x:auto;">
+      <table id="covidData">
+        <tr>
+          <th style="font-size: 1.5rem;">Country Name</th>
+          <th style="font-size: 1.5rem;">Total Cases</th>
+          <th  style="font-size: 1.5rem" (click)="sortTable(2)">Total New Cases</th>
+          <th style="font-size: 1.5rem;">Total Recovered</th>
+          <th style="font-size: 1.5rem;">Total New Recovered</th>
+          <th style="font-size: 1.5rem;">Total Deaths</th>
+          <th style="font-size: 1.5rem;">Total New Deaths</th>
+        </tr>
+        <tr *ngFor="let country of countriesArray">
+          <td style="font-size: 1.2rem;color:crimson">{{country["Country"]}}</td>
+          <td style="font-size: 1.1rem;">{{country["TotalConfirmed"] | number}}</td>
+          <td style="font-size: 1.1rem;">{{country["NewConfirmed"] | number}}</td>
+          <td style="font-size: 1.1rem;">{{country["TotalRecovered"] | number}}</td>
+          <td style="font-size: 1.1rem;">{{country["NewRecovered"] | number}}</td>
+          <td style="font-size: 1.1rem;">{{country["TotalDeaths"] | number}}</td>
+          <td style="font-size: 1.1rem;">{{country["NewDeaths"] | number}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="vericle-space"></div>
+
     <h2 class="heading">Graphs [Coming Soon]</h2>
     <!-- Footer -->
     <footer>
